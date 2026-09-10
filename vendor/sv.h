@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdbool.h>
 
 typedef struct {
     char* self;
@@ -143,9 +144,8 @@ void sv_cut_by_delim_left(sv_t* s, char c) {
     }
 }
 
-/* basically string_view.copy(), but has to be freed */
 char* sv_to_cstr(sv_t* s) {
-    return strndup(s->self, s->length);
+    return (char*)strndup(s->self, s->length);
 }
 
 sv_t sv_copy(sv_t* s) {

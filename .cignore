@@ -3,4 +3,6 @@ ci_main.c
 darr.h
 sv.h
 Makefile
+vendor/
+README.md
 
